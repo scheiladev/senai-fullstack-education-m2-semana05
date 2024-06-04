@@ -99,3 +99,5 @@ function encontrarMaiorNumero(numeros) {
 
   return maiorNumero;
 }
+
+entrevistaAluno();

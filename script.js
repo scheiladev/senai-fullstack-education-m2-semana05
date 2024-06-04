@@ -19,8 +19,6 @@ function resultadoFinal(media) {
     : `<p>Média: <strong>${media}</strong>.<br> Infelizmente você está de recuperação.</p>`;
 }
 
-document.write(resultadoFinal(mediaNotas));
-
 /* LabScore pt.1 - Exercício 3 */
 let listaAlunos = ["Pedro", "Maria", "João", "Paula"];
 
@@ -30,9 +28,6 @@ function imprimirNomes(nomes) {
   });
 }
 
-imprimirNomes(listaAlunos);
-document.write("<br>");
-
 /* LabScore pt.1 - Exercício 4 */
 function tabuada(numero) {
   for (let i = 0; i <= 10; i++) {
@@ -40,9 +35,6 @@ function tabuada(numero) {
     document.write(`${numero} x ${i} = ${resultado}<br>`);
   }
 }
-
-tabuada(8);
-document.write("<br>");
 
 /* LabScore pt.1 - Exercício 5 */
 function entrevistaAluno() {
@@ -71,9 +63,6 @@ function entrevistaAluno() {
     : document.write(`<p>Os dados não foram confirmados.</p>`);
 }
 
-entrevistaAluno();
-document.write("<br>");
-
 /* LabScore pt.1 - Exercício 6 */
 function notasMateria() {
   let materia = window.prompt("Qual o nome da matéria?");
@@ -98,9 +87,6 @@ function notasMateria() {
     <span>Média: <strong>${media}</strong></span><br>`);
 }
 
-notasMateria();
-document.write("<br>");
-
 /* LabScore pt.1 - Exercício 7 */
 function encontrarMaiorNumero(numeros) {
   let maiorNumero = numeros[0];
@@ -113,5 +99,3 @@ function encontrarMaiorNumero(numeros) {
 
   return maiorNumero;
 }
-
-document.write("O maior número é " + encontrarMaiorNumero(listaNotas));

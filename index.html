@@ -24,23 +24,23 @@
           <ul>
             <li>
               <strong>Nome: </strong>
-              <span>João da Silva</span>
+              <span id="nome"></span>
             </li>
             <li>
               <strong>Idade: </strong>
-              <span>16 anos</span>
+              <span id="idade"></span>
             </li>
             <li>
               <strong>Série: </strong>
-              <span>2º ano do Ensino Médio</span>
+              <span id="serie"></span>
             </li>
             <li>
               <strong>Escola: </strong>
-              <span>Escola Estadual Professor José</span>
+              <span id="escola"></span>
             </li>
             <li>
               <strong>Matéria Favorita: </strong>
-              <span>Matemática</span>
+              <span id="materia"></span>
             </li>
           </ul>
         </section>
@@ -48,9 +48,9 @@
         <section class="notas">
           <div class="top">
             <h2>Notas das Matérias</h2>
-            <button>Adicionar Linha</button>
+            <button id="bt-notas">Adicionar Linha</button>
           </div>
-          <table>
+          <table id="tabelaMaterias">
             <thead>
               <tr>
                 <th>Matéria</th>
@@ -61,26 +61,19 @@
                 <th>Média</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Matemática</td>
-                <td>7.5</td>
-                <td>8.0</td>
-                <td>6.0</td>
-                <td>9.0</td>
-                <td>7.6</td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
 
           <div class="media">
             <h3>Média Geral do Aluno</h3>
-            <p>A média geral do aluno é 7.6</p>
+            <p>A média geral do aluno é <span id="mediaGeral"></span></p>
           </div>
 
           <div class="media">
             <h3>Maior Média entre as Matérias</h3>
-            <p>A maior média entre as matérias é 7.6</p>
+            <p>
+              A maior média entre as matérias é <span id="maiorMedia"></span>
+            </p>
           </div>
         </section>
 

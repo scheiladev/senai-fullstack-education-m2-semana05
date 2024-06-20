@@ -53,17 +53,20 @@ function entrevistaAluno() {
 
   let confirmacao = window.confirm(dadosAluno);
 
-  return confirmacao
-    ? document.write(`
-      <span>Nome do aluno: <strong>${nome}</strong></span><br>
-      <span>Idade do aluno: <strong>${idade}</strong></span><br>
-      <span>Série do aluno: <strong>${serie}</strong></span><br>
-      <span>Nome da escola: <strong>${escola}</strong></span><br>
-      <span>Matéria favorita: <strong>${materia}</strong></span><br>`)
-    : document.write(`<p>Os dados não foram confirmados.</p>`);
+  if (confirmacao) {
+    document.getElementById("nome").innerText = nome;
+    document.getElementById("idade").innerText = idade;
+    document.getElementById("serie").innerText = serie;
+    document.getElementById("escola").innerText = escola;
+    document.getElementById("materia").innerText = materia;
+  } else {
+    return window.alert("Os dados não foram confirmados.");
+  }
 }
 
 /* LabScore pt.1 - Exercício 6 */
+let medias = [];
+
 function notasMateria() {
   let materia = window.prompt("Qual o nome da matéria?");
   let notas = [];
@@ -80,11 +83,15 @@ function notasMateria() {
   };
 
   let media = calculaMedia(dadosMateria.notas);
+  medias.push(media);
 
-  document.write(`
-    <span>Matéria: <strong>${dadosMateria.nomeMateria}</strong></span><br>
-    <span>Notas: <strong>[${dadosMateria.notas.join(", ")}]</strong></span><br>
-    <span>Média: <strong>${media}</strong></span><br>`);
+  adicionaMateria(dadosMateria, media);
+
+  let mediaGeral = calculaMedia(medias);
+  document.querySelector("#mediaGeral").innerText = mediaGeral;
+
+  let maiorMedia = encontrarMaiorNumero(medias);
+  document.querySelector("#maiorMedia").innerHTML = maiorMedia;
 }
 
 /* LabScore pt.1 - Exercício 7 */
@@ -98,6 +105,24 @@ function encontrarMaiorNumero(numeros) {
   }
 
   return maiorNumero;
+}
+
+/* LabScore pt.2 - Exercício 4 */
+let botaoMaterias = document.querySelector("#bt-notas");
+botaoMaterias.addEventListener("click", notasMateria);
+
+function adicionaMateria(dadosMateria, media) {
+  let tbody = document.querySelector("#tabelaMaterias tbody");
+  tbody.innerHTML += `
+    <tr>
+      <td>${dadosMateria.nomeMateria}</td>
+      <td>${dadosMateria.notas[0]}</td>
+      <td>${dadosMateria.notas[1]}</td>
+      <td>${dadosMateria.notas[2]}</td>
+      <td>${dadosMateria.notas[3]}</td>
+      <td>${media}</td>
+    <tr>
+  `;
 }
 
 entrevistaAluno();
